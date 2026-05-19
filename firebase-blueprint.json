@@ -1,0 +1,38 @@
+{
+  "entities": {
+    "TranslationRecord": {
+      "title": "Translation Record",
+      "description": "Stores full translation exercise data including source article, answers, and AI feedback.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "Title/Session identifier provided by user" },
+        "fullArticle": { "type": "string", "description": "The background article text" },
+        "userAnswersBulk": { "type": "string", "description": "The raw bulk input of user answers" },
+        "standardAnswersBulk": { "type": "string", "description": "The raw bulk input of standard answers" },
+        "items": { 
+          "type": "array",
+          "description": "Parsed question items",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "userAnswer": { "type": "string" },
+              "standardAnswer": { "type": "string" }
+            }
+          }
+        },
+        "result": { "type": "object", "description": "AI generated grading results" },
+        "createdAt": { "type": "object", "description": "Firestore server timestamp" },
+        "updatedAt": { "type": "object", "description": "Firestore server timestamp" },
+        "userId": { "type": "string" }
+      },
+      "required": ["title", "fullArticle", "items", "result", "userId"]
+    }
+  },
+  "firestore": {
+    "records": {
+      "schema": "TranslationRecord",
+      "description": "Collection of translation records"
+    }
+  }
+}

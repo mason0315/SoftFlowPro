@@ -1,0 +1,6 @@
+{
+  "name": "考研英语翻译智能体",
+  "description": "基于考研英语一大纲评分标准，为翻译练习提供精准评分、差异点指出及知识点总结的智能学习辅助工具。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

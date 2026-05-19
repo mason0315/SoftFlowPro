@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+
+  --color-neu-bg: #e0e5ec;
+  --shadow-neu-out: 6px 6px 12px #b8bcc2, -6px -6px 12px #ffffff;
+  --shadow-neu-out-lg: 8px 8px 16px #b8bcc2, -8px -8px 16px #ffffff;
+  --shadow-neu-in: inset 4px 4px 8px #b8bcc2, inset -4px -4px 8px #ffffff;
+  --shadow-neu-subtle: 4px 4px 8px #b8bcc2, -4px -4px 8px #ffffff;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-gray-700 bg-neu-bg;
+  }
+}
+
+@utility neu-out {
+  box-shadow: var(--shadow-neu-out);
+}
+
+@utility neu-out-lg {
+  box-shadow: var(--shadow-neu-out-lg);
+}
+
+@utility neu-in {
+  box-shadow: var(--shadow-neu-in);
+}
+
+@utility neu-subtle {
+  box-shadow: var(--shadow-neu-subtle);
+}
+
+.glass-card {
+  @apply bg-neu-bg neu-out;
+}
